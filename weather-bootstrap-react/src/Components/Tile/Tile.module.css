@@ -1,0 +1,12 @@
+.weatherForecastDate {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.weatherForecastTemperatureMin {
+  opacity: 0.5;
+}
+
+.weatherForecastTemperature {
+  font-size: 13px;
+}
