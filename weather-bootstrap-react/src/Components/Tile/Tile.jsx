@@ -4,9 +4,9 @@ import { formatDateWeekDay } from '../../../helpers';
 
 import * as classes from './Tile.module.css';
 
-function Tile({ icon, minTemperature, maxTemperature, date, ...other }) {
+function Tile({ icon, minTemperature, maxTemperature, date, className }) {
     return (
-        <div {...other}>
+        <div className={className}>
             <div className={classes.weatherForecastDate}>{formatDateWeekDay(date)}</div>
 
             <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt="" width="42" />

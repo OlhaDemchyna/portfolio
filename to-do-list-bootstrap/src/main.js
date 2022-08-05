@@ -4,19 +4,6 @@ const toDoListElement = document.getElementById('todoList');
 
 const todos = JSON.parse(window.localStorage.getItem('todos') || '[]');
 
-/*
-[
-    {
-        isChecked: true,
-        value: 'Hello',
-    },
-    {
-        isChecked: false,
-        value: 'world',
-    }
-]
-*/
-
 function addTask(event) {
     event.preventDefault();
 

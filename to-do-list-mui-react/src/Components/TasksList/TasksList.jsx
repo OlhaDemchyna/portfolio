@@ -13,7 +13,7 @@ function TasksList({ tasks, onRemove, onToggle }) {
         onRemove(index);
     }
 
-    const handleToggle = (index) => (event) => {
+    const handleToggle = (index) => () => {
         onToggle(index);
     }
 

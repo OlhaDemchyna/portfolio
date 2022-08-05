@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import { WeatherContext } from '../../../helpers';
 
-function Form(props) {
+function Form() {
     const { getTemperature } = useContext(WeatherContext);
 
     const handleSubmit = (event) => {

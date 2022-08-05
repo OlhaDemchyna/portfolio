@@ -112,7 +112,7 @@ function getWeather(cityValue) {
     }
 }
 
-let lastCelsiusTemp = null;
+let lastCelsiusTemp;
 
 function celsiusTemp(event) {
     event.preventDefault();
