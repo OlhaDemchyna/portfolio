@@ -1,0 +1,62 @@
+name: Build and Deploy
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Create dist folder
+        run: |
+          mkdir dist
+
+      - name: Copy ToDoList Bootstrap
+        run: |
+          cp -R to-do-list-bootstrap dist/to-do-list-bootstrap
+
+      - name: Install and Build ToDoList Bootstrap React
+        run: |
+          cd to-do-list-bootstrap-react
+          yarn --cwd to-do-list-bootstrap-react install
+          yarn --cwd to-do-list-bootstrap-react build
+          cp -R dist/ ../dist/to-do-list-bootstrap-react/
+
+      - name: Install and Build ToDoList MUI React
+        run: |
+          cd to-do-list-mui-react
+          yarn --cwd to-do-list-mui-react install
+          yarn --cwd to-do-list-mui-react build
+          cp -R dist/ ../dist/to-do-list-mui-react/
+
+      - name: Copy Weather Bootstrap
+        run: |
+          cp -R weather-bootstrap dist/weather-bootstrap
+
+      - name: Install and Build Weather Bootstrap React
+        run: |
+          cd weather-bootstrap-react
+          yarn --cwd weather-bootstrap-react install
+          yarn --cwd weather-bootstrap-react build
+          cp -R dist/ ../dist/weather-bootstrap-react/
+
+      - name: Install and Build Weather MUI React
+        run: |
+          cd weather-mui-react
+          yarn --cwd weather-mui-react install
+          yarn --cwd weather-mui-react build
+          cp -R dist/ ../dist/weather-mui-react/
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
