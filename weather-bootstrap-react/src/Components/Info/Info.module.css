@@ -1,0 +1,68 @@
+.city {
+    color: #878787;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-bottom: 0;
+}
+
+.ul {
+    margin: 0;
+    padding: 0;
+}
+
+.li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #878787;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.overview {
+    margin: 20px;
+}
+
+.weatherTemperature img {
+    margin-right: 5px;
+    height: 64px;
+    width: 64px;
+}
+
+.weatherTemperature strong {
+    line-height: 1;
+    font-size: 64px;
+    font-weight: 400;
+    color: rgb(33, 33, 33);
+}
+
+.weatherTemperatureUnits {
+    position: relative;
+    font-size: 16px;
+    top: -34px;
+}
+
+.weatherTemperatureUnits a {
+    text-decoration: none;
+}
+
+.weatherTemperatureAActive {
+    cursor: default;
+    color: rgb(33, 33, 33);
+}
+
+.weatherTemperatureAActive:hover {
+    text-decoration: none;
+}
+
+.description::first-letter {
+    text-transform: uppercase;
+}
+
+.weatherForecast {
+    margin-top: 20px;
+    text-align: center;
+    color: #000;
+}
