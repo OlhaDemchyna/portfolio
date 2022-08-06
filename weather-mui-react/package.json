@@ -5,7 +5,7 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel serve -p 5500",
-    "build": "parcel build"
+    "build": "parcel build --public-url ./"
   },
   "devDependencies": {
     "buffer": "^6.0.3",
